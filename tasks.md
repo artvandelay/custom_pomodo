@@ -1,5 +1,6 @@
 # Bugs and fixes
-- 
+- Remove erase button now that we have remove last entries
+- Find a way so that state variables aren't updated so frequently, gdrive sync goes mad syncing each time. 
 
 # Improvements
 - Track my phone and turn off whenever I pick up phone, bradly check for distraction
