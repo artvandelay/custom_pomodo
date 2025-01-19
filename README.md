@@ -4,7 +4,7 @@
 
 1. **Clone the repository:**
     ```sh
-    git clone {repository_url}
+    git clone https://github.com/artvandelay/custom_pomodo
     cd custom_pomodo
     ```
 
@@ -16,11 +16,11 @@
 
 3. **Install the required packages:**
     ```sh
-    pip install -r requirements.txt
+    pip3 install -r requirements.txt
     ```
 
 4. **Run the application:**
     ```sh
-    streamlit run main.py
+    streamlit run main.py --server.port 1111
     ```
 
