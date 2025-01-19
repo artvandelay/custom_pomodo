@@ -4,8 +4,7 @@ import streamlit as st
 from streamlit_autorefresh import st_autorefresh
 from datetime import datetime
 import logging
-from utils import initialize_csv, log_event, check_and_stop_timer, start_timer, stop_timer, reset_day, erase_csv, export_csv, format_time
-import openai
+from utils import remove_last_entry, initialize_csv, log_event, check_and_stop_timer, start_timer, stop_timer, reset_day, erase_csv, export_csv, format_time
 
 # Configure logging
 logging.basicConfig(level=logging.WARNING, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -60,6 +59,28 @@ st.markdown(
     .stButton button { background-color: #e0e0e0; color: black; border-radius: 8px; padding: 0.5rem 1rem; font-size: 16px; border: 1px solid #cfd8dc; }
     .stButton button:hover { background-color: #d6d6d6; }
     .stTable { font-family: 'Helvetica Neue', sans-serif; color: #2C3E50; }
+
+    /* Sleek button design */
+    .stButton button {
+        background-color: #111;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        opacity: 0.5; /* Dim buttons by default */
+        transition: opacity 0.3s, background-color 0.3s;
+    }
+
+    .stButton button:hover {
+        opacity: 1; /* Full opacity on hover */
+        background-color: #444; /* Slightly brighter on hover */
+    }  
+    
+    /* Remove the anchor links next to headers */
+    .css-1y0tads a {
+        display: none;
+    }      
     </style>
     """,
     unsafe_allow_html=True
@@ -119,6 +140,10 @@ if not df.empty:
     st.table(recent_entries[["Timestamp", "Activity", "Event"]])
 else:
     st.write("No activity logged yet.")
+
+# Remove last entry
+if st.button("Remove Last Entry", key=f"remove_{activity}"):
+    remove_last_entry()
 
 # Daily Motivational Quote
 st.markdown("---")

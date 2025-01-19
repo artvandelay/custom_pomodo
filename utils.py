@@ -89,3 +89,13 @@ def format_time(seconds):
         return f"{minutes}m {seconds}s"
     else:
         return f"{seconds}s"
+
+# Helper function to remove the last entry from the log
+def remove_last_entry():
+    log_file = "time_tracker_log.csv"
+    if os.path.exists(log_file):
+        df = pd.read_csv(log_file)
+        if not df.empty:
+            df = df[:-1]  # Remove the last row
+            df.to_csv(log_file, index=False)
+
