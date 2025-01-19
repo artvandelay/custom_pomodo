@@ -1,5 +1,5 @@
 # Bugs and fixes
-- Remove erase button now that we have remove last entries
+- [Done] Remove erase button now that we have remove last entries
 - Find a way so that state variables aren't updated so frequently, gdrive sync goes mad syncing each time. 
 
 # Improvements

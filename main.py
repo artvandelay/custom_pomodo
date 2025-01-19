@@ -86,28 +86,37 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.title("Jigar Time Tracker")
+st.markdown("# Time Tracker")
 
 # Combine Reset Day and Erase CSV buttons in one row
 col1, col2 = st.columns(2)
 with col1:
-    st.button("Reset Day", on_click=lambda: reset_day(st))
-with col2:
-    if not st.session_state['confirm_erase']:
-        if st.button("Erase CSV"):
-            st.session_state['confirm_erase'] = True
-    else:
-        st.warning("Are you sure you want to erase the CSV file?")
-        if st.button("Confirm Erase CSV"):
-            erase_csv()
-            st.session_state['confirm_erase'] = False
-        elif st.button("Cancel"):
-            st.session_state['confirm_erase'] = False
+    st.button("Start a New Day", on_click=lambda: reset_day(st))
+# with col2:
+#     if not st.session_state['confirm_erase']:
+#         if st.button("Erase CSV"):
+#             st.session_state['confirm_erase'] = True
+#     else:
+#         st.warning("Are you sure you want to erase the CSV file?")
+#         if st.button("Confirm Erase CSV"):
+#             erase_csv()
+#             st.session_state['confirm_erase'] = False
+#         elif st.button("Cancel"):
+#             st.session_state['confirm_erase'] = False
 
-st.markdown("---")
+# st.markdown("---")
+
+# Daily Motivational Quote
+st.markdown(":violet-background[The agony of procrastination is wastage, just do it]")
 
 # Timer Controls
-st.header("Timers")
+st.markdown("## Tasks")
+
+# Initialize session state for all activities
+if 'active_timer' not in st.session_state:
+    st.session_state['active_timer'] = None
+if 'timers' not in st.session_state:
+    st.session_state['timers'] = {activity: 0 for activity in activities}
 
 # Display all timers in one row
 activities = ["Coding", "Writing", "Learning", "Comms"]
@@ -120,23 +129,24 @@ for idx, activity in enumerate(activities):
             elapsed_time = (datetime.now() - st.session_state['start_time']).seconds
             st.write(f"Elapsed Time: {format_time(elapsed_time)}")
             if st.button("Stop", key=f"stop_{activity}"):
-                stop_timer(st)
+                st.session_state['timers'][activity] += elapsed_time
                 st.session_state['active_timer'] = None
                 st.session_state['start_time'] = None
         else:
             if st.button("Start", key=f"start_{activity}"):
-                start_timer(st, activity)
                 st.session_state['active_timer'] = activity
                 st.session_state['start_time'] = datetime.now()
+
+        st.write(f"Total Time: {format_time(st.session_state['timers'][activity])}")
 
 # Save state after actions
 save_persistent_state()
 
 # Show recent activity logged in csv
-st.header("Recent Activity Log")
+st.markdown("## Activity Log")
 df = pd.read_csv("time_tracker_log.csv")
 if not df.empty:
-    recent_entries = df.tail(4)
+    recent_entries = df.tail(8)
     st.table(recent_entries[["Timestamp", "Activity", "Event"]])
 else:
     st.write("No activity logged yet.")
@@ -144,10 +154,6 @@ else:
 # Remove last entry
 if st.button("Remove Last Entry", key=f"remove_{activity}"):
     remove_last_entry()
-
-# Daily Motivational Quote
-st.markdown("---")
-st.write("The agony of procrastination is wastage, just do it.")
 
 # Display cumulative time in one row
 st.markdown("---")
