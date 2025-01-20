@@ -24,18 +24,18 @@ def load_or_initialize_csv(file_path, columns):
 # Helper function to save persistent state to CSV
 def save_persistent_state(state_df):
     state_data = {
-        "start_time": [st.session_state.get("start_time").isoformat() if st.session_state.get("start_time") else None],
+        "start_time": [st.session_state.get("start_time").isoformat() if st.session_state.get("start_time") is not None else None],
         "active_timer": [st.session_state.get("active_timer")]
     }
     current_data_dict = state_df.to_dict(orient='list')
-    if current_data_dict != state_data:
+    if not state_df.equals(pd.DataFrame(state_data)):
         pd.DataFrame(state_data).to_csv(STATE_CSV_FILE, index=False)
 
 # Helper function to load persistent state from CSV
 def load_persistent_state(state_df):
     if not state_df.empty:
         start_time_str = state_df.iloc[0]["start_time"]
-        st.session_state["start_time"] = datetime.fromisoformat(start_time_str) if pd.notna(start_time_str) else None
+        st.session_state["start_time"] = datetime.fromisoformat(start_time_str) if start_time_str and pd.notna(start_time_str) else None
         st.session_state["active_timer"] = state_df.iloc[0]["active_timer"]
 
 # Auto-refresh every second

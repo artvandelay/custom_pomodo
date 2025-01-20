@@ -2,3 +2,4 @@
 custom_pomodo_env
 *.pyc
 state_tracker.csv
+__pycache__
