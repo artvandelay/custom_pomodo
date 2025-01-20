@@ -5,7 +5,6 @@ from streamlit_autorefresh import st_autorefresh
 from datetime import datetime
 import logging
 from utils import remove_last_entry, initialize_csv, log_event, check_and_stop_timer, start_timer, stop_timer, reset_day, erase_csv, export_csv, format_time
-import openai
 
 # Configure logging
 logging.basicConfig(level=logging.WARNING, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -39,12 +38,6 @@ def load_persistent_state(state_df):
         st.session_state["start_time"] = datetime.fromisoformat(start_time_str) if pd.notna(start_time_str) else None
         st.session_state["active_timer"] = state_df.iloc[0]["active_timer"]
 
-# Helper function to handle date change
-def handle_date_change():
-    if st.session_state.get('last_active_date') != datetime.now().date():
-        check_and_stop_timer(st)
-        st.session_state['last_active_date'] = datetime.now().date()
-
 # Auto-refresh every second
 st_autorefresh(interval=1000, key="timer_refresh")
 
@@ -65,8 +58,6 @@ log_df = load_or_initialize_csv(LOG_CSV_FILE, ["Timestamp", "Activity", "Event"]
 load_persistent_state(state_df)
 
 initialize_csv()
-
-handle_date_change()
 
 # Streamlit UI with custom theme
 st.markdown(
@@ -138,10 +129,12 @@ for idx, activity in enumerate(activities):
                 st.session_state['timers'][activity] += elapsed_time
                 st.session_state['active_timer'] = None
                 st.session_state['start_time'] = None
+                log_event(activity, "Stop", elapsed_time)
         else:
             if st.button("Start", key=f"start_{activity}"):
                 st.session_state['active_timer'] = activity
                 st.session_state['start_time'] = datetime.now()
+                log_event(activity, "Start", None)
 
         st.write(f"Total Time: {format_time(st.session_state['timers'][activity])}")
 
@@ -157,15 +150,11 @@ else:
     st.write("No activity logged yet.")
 
 # Remove last entry with confirmation
-if st.button("Remove Last Entry"):
-    if st.session_state.get('confirm_remove', False):
+if st.checkbox("Removal of last entry"):
+    if st.button("Confirm removal of last Entry"):
         log_df = log_df[:-1]
         log_df.to_csv(LOG_CSV_FILE, index=False)
-        st.session_state['confirm_remove'] = False
         st.write("Last entry removed.")
-    else:
-        st.session_state['confirm_remove'] = True
-        st.warning("Click again to confirm removal of the last entry.")
 
 # Display cumulative time in one row
 st.markdown("---")
