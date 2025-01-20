@@ -4,10 +4,12 @@ import streamlit as st
 from streamlit_autorefresh import st_autorefresh
 from datetime import datetime
 import logging
-from utils import remove_last_entry, initialize_csv, log_event, check_and_stop_timer, start_timer, stop_timer, reset_day, erase_csv, export_csv, format_time
+from utils import remove_last_entry, log_event, check_and_stop_timer, start_timer, stop_timer, reset_day, erase_csv, export_csv, format_time
+
+# CSV_FILE_PATH = "lifetime_time_data.csv"
 
 # Configure logging
-logging.basicConfig(level=logging.WARNING, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO , format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger()
 
 STATE_CSV_FILE = "state_tracker.csv"
@@ -56,8 +58,6 @@ log_df = load_or_initialize_csv(LOG_CSV_FILE, ["Timestamp", "Activity", "Event"]
 
 # Load persistent state
 load_persistent_state(state_df)
-
-initialize_csv()
 
 # Streamlit UI with custom theme
 st.markdown(
@@ -165,13 +165,14 @@ for idx, activity in enumerate(activities):
         st.subheader(activity)
         st.write(f"**Today**: {format_time(st.session_state['timers'][activity])}")
 
-# Export CSV
-st.download_button(
-    label="Download Lifetime Data as CSV",
-    data=export_csv(),
-    file_name="lifetime_time_data.csv",
-    mime="text/csv"
-)
+# # Export CSV
+# if st.button("Export Lifetime Data"):
+#     st.download_button(
+#         label="Download Lifetime Data as CSV",
+#         data=export_csv("lifetime_time_data.csv"),
+#         file_name="lifetime_time_data.csv",
+#         mime="text/csv"
+#     )
 
 st.write("---")
 st.markdown("> Track your productivity with a clean and efficient interface. Make the most of your time!")

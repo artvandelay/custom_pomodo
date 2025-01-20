@@ -73,7 +73,7 @@ def erase_csv():
         logger.info("CSV file erased and reinitialized.")
 
 # Export lifetime data as CSV
-def export_csv():
+def export_csv(FILE_PATH):
     df = pd.read_csv(CSV_FILE_PATH)
     logger.info("Exporting CSV data.")
     return df.to_csv(index=False).encode('utf-8')
