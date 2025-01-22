@@ -12,7 +12,7 @@ from utils import remove_last_entry, log_event, check_and_stop_timer, start_time
 logging.basicConfig(level=logging.INFO , format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger()
 
-STATE_CSV_FILE = "state_tracker.csv"
+STATE_CSV_FILE = "/tmp/custom_pomodoro_state_tracker.csv"
 LOG_CSV_FILE = "time_tracker_log.csv"
 
 # Helper function to load or initialize state CSV
