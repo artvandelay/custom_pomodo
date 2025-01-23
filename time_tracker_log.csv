@@ -1,2 +1,69 @@
 Timestamp,Activity,Event,Elapsed Time
-"19 Jan 2025, 02:38 AM",All Activities,Erase CSV,N/A
+"19 Jan 2025, 04:24 AM",All Activities,Erase CSV,
+"20 Jan 2025, 01:46 PM",All Activities,Reset Day,
+"20 Jan 2025, 03:23 PM",Comms,Start,
+"20 Jan 2025, 04:43 PM",Comms,Stop,1h 19m 54s
+"20 Jan 2025, 04:59 PM",Coding,Start,
+"20 Jan 2025, 05:30 PM",Coding,Stop,31m 20s
+"20 Jan 2025, 05:30 PM",Coding,Start,
+"20 Jan 2025, 05:36 PM",Coding,Stop,6m 12s
+"20 Jan 2025, 05:38 PM",Coding,Start,
+"20 Jan 2025, 05:38 PM",Coding,Stop,10s
+"20 Jan 2025, 06:49 PM",Coding,Start,
+"20 Jan 2025, 07:40 PM",Coding,Stop,51m 18s
+"20 Jan 2025, 07:51 PM",Coding,Start,
+"20 Jan 2025, 09:08 PM",Coding,Stop,1h 16m 59s
+"20 Jan 2025, 09:28 PM",Coding,Start,
+"20 Jan 2025, 09:38 PM",Coding,Stop,10m 17s
+"20 Jan 2025, 09:39 PM",Coding,Stop,10m 48s
+"20 Jan 2025, 09:40 PM",Coding,Stop,11m 51s
+"20 Jan 2025, 09:53 PM",Coding,Start,
+"20 Jan 2025, 09:54 PM",Coding,Start,
+"20 Jan 2025, 09:57 PM",Coding,Stop,3m 36s
+"20 Jan 2025, 10:09 PM",Coding,Start,
+"20 Jan 2025, 10:11 PM",Coding,Stop,2m 30s
+"20 Jan 2025, 10:57 PM",Coding,Start,
+"20 Jan 2025, 11:21 PM",Coding,Stop,23m 52s
+"20 Jan 2025, 11:40 PM",Coding,Start,
+"21 Jan 2025, 12:19 AM",Coding,Stop,38m 7s
+"21 Jan 2025, 01:39 AM",Coding,Start,
+"21 Jan 2025, 03:52 AM",Coding,Stop,2h 12m 33s
+"21 Jan 2025, 03:52 AM",Coding,Start,
+"21 Jan 2025, 5:52 AM",Coding,Stop,5h 59m 59s
+"21 Jan 2025, 11:52 AM",All Activities,Reset Day,
+"21 Jan 2025, 11:57 AM",Learning,Start,
+"21 Jan 2025, 12:55 PM",Learning,Stop,58m 17s
+"21 Jan 2025, 01:03 PM",Coding,Start,
+"21 Jan 2025, 01:20 PM",Coding,Stop,17m 30s
+"21 Jan 2025, 01:20 PM",Learning,Start,
+"21 Jan 2025, 01:54 PM",Learning,Stop,33m 29s
+"21 Jan 2025, 01:54 PM",Coding,Start,
+"21 Jan 2025, 04:22 PM",Coding,Stop,2h 28m 12s
+"21 Jan 2025, 04:39 PM",Coding,Start,
+"21 Jan 2025, 07:10 PM",Coding,Stop,2h 31m 11s
+"21 Jan 2025, 08:01 PM",Coding,Start,
+"21 Jan 2025, 09:02 PM",Coding,Stop,1h 0m 43s
+"21 Jan 2025, 10:27 PM",Coding,Start,
+"21 Jan 2025, 10:27 PM",Coding,Stop,1s
+"21 Jan 2025, 10:27 PM",Comms,Start,
+"22 Jan 2025, 12:39 AM",Comms,Stop,2h 12m 12s
+"22 Jan 2025, 03:40 AM",Coding,Start,
+"22 Jan 2025, 05:50 PM",Coding,Stop,2h 00m 00s
+"22 Jan 2025, 01:17 PM",All Activities,Reset Day,
+"22 Jan 2025, 01:18 PM",Coding,Start,
+"22 Jan 2025, 01:41 PM",Coding,Stop, 23m 12s
+"22 Jan 2025, 01:51 PM",Coding,Start,
+"22 Jan 2025, 01:51 PM",Coding,Start,
+"22 Jan 2025, 02:05 PM",Coding,Stop,47m 27s
+"22 Jan 2025, 02:25 PM",Coding,Start,
+"22 Jan 2025, 04:13 PM",Coding,Stop,1h 47m 32s
+"22 Jan 2025, 05:42 PM",Coding,Start,
+"22 Jan 2025, 06:42 PM",Coding,Stop,2h 00m 0s
+"23 Jan 2025, 12:12 AM",Coding,Start,
+"23 Jan 2025, 04:33 AM",Coding,Stop,4h 20m 58s
+"23 Jan 2025, 04:37 AM",Coding,Start,
+"23 Jan 2025, 04:37 AM",Coding,Stop,10s
+"23 Jan 2025, 04:45 PM",All Activities,Reset Day,
+"23 Jan 2025, 03:00 PM",Comms,Start,
+"23 Jan 2025, 04:20 PM",Comms,Stop,1h 20m 12s
+

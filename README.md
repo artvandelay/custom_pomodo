@@ -10,8 +10,8 @@
 
 2. **Create and activate the virtual environment:**
     ```sh
-    python3 -m venv custom_pomodo_env
-    source custom_pomodo_env/bin/activate
+    python3 -m venv ~/pyenv/custom-pomodoro-env
+    source ~/pyenv/custom-pomodoro-env/bin/activate
     ```
 
 3. **Install the required packages:**
@@ -22,5 +22,10 @@
 4. **Run the application:**
     ```sh
     streamlit run main.py --server.port 1111
+    http://localhost:1111
+    ```
+5. **Logs**
+    ``` sh
+    time_tracker_log.csv 
     ```
 
