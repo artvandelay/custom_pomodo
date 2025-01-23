@@ -142,9 +142,12 @@ for idx, activity in enumerate(activities):
 save_persistent_state(state_df)
 
 # Show recent activity logged in csv
-st.markdown("## Activity Log")
+st.markdown("## Today's Activity Log")
 if not log_df.empty:
-    recent_entries = log_df.tail(8)
+    # recent_entries = log_df.tail(8)
+    # st.table(recent_entries[["Timestamp", "Activity", "Event"]])
+    reset_day_index = log_df[log_df["Event"] == "Reset Day"].index[-1]
+    recent_entries = log_df.iloc[reset_day_index + 1:]
     st.table(recent_entries[["Timestamp", "Activity", "Event"]])
 else:
     st.write("No activity logged yet.")
