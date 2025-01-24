@@ -136,7 +136,7 @@ for idx, activity in enumerate(activities):
                 st.session_state['start_time'] = datetime.now()
                 log_event(activity, "Start", None)
 
-        st.write(f"Total Time: {format_time(st.session_state['timers'][activity])}")
+        st.write(f"Last Time: {format_time(st.session_state['timers'][activity])}")
 
 # Save state after actions
 save_persistent_state(state_df)
