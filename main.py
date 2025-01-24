@@ -162,11 +162,41 @@ if st.checkbox("Removal of last entry"):
 # Display cumulative time in one row
 st.markdown("---")
 st.header("Cumulative Time")
-cols = st.columns(len(activities))
-for idx, activity in enumerate(activities):
-    with cols[idx]:
-        st.subheader(activity)
-        st.write(f"**Today**: {format_time(st.session_state['timers'][activity])}")
+# cols = st.columns(len(activities))
+# for idx, activity in enumerate(activities):
+#     with cols[idx]:
+#         st.subheader(activity)
+#         st.write(f"**Today**: {format_time(st.session_state['timers'][activity])}")
+
+
+# Calculate cumulative time since the last "Reset Day"
+if not log_df.empty:
+    reset_day_index = log_df[log_df["Event"] == "Reset Day"].index[-1]
+    filtered_log_df = log_df.iloc[reset_day_index + 1:]
+    cumulative_times = {activity: 0 for activity in activities}
+    for _, row in filtered_log_df.iterrows():
+        if row["Event"] == "Stop":
+            activity = row["Activity"]
+            elapsed_time = row["Elapsed Time"]
+            if pd.notna(elapsed_time):
+                time_parts = elapsed_time.split()
+                seconds = 0
+                for part in time_parts:
+                    if part.endswith('h'):
+                        seconds += int(part[:-1]) * 3600
+                    elif part.endswith('m'):
+                        seconds += int(part[:-1]) * 60
+                    elif part.endswith('s'):
+                        seconds += int(part[:-1])
+                cumulative_times[activity] += seconds
+
+    cols = st.columns(len(activities))
+    for idx, activity in enumerate(activities):
+        with cols[idx]:
+            st.subheader(activity)
+            st.write(f"Today: {format_time(cumulative_times[activity])}")
+else:
+    st.write(f"Today: 0h 0m 0s")
 
 # # Export CSV
 # if st.button("Export Lifetime Data"):
