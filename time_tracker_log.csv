@@ -66,4 +66,32 @@ Timestamp,Activity,Event,Elapsed Time
 "23 Jan 2025, 04:45 PM",All Activities,Reset Day,
 "23 Jan 2025, 03:00 PM",Comms,Start,
 "23 Jan 2025, 04:20 PM",Comms,Stop,1h 20m 12s
-"23 Jan 2025, 05:09 PM",Coding,Start,N/A
+"23 Jan 2025, 05:09 PM",Coding,Start,
+"23 Jan 2025, 05:17 PM",Coding,Stop,7m 28s
+"23 Jan 2025, 09:59 PM",Comms,Start,
+"23 Jan 2025, 10:25 PM",Comms,Stop,25m 31s
+"24 Jan 2025, 02:21 PM",All Activities,Reset Day,
+"24 Jan 2025, 12:30 PM",Comms,Start,
+"24 Jan 2025, 02:00 PM",Comms,Stop,1h 30m 0s
+"24 Jan 2025, 02:30 PM",Coding,Start,
+"24 Jan 2025, 02:56 PM",Comms,Start,
+"24 Jan 2025, 03:02 PM",Comms,Stop,6m 10s
+"24 Jan 2025, 03:02 PM",Writing,Start,
+"24 Jan 2025, 03:08 PM",Writing,Stop,5m 14s
+"24 Jan 2025, 03:16 PM",Comms,Start,
+"24 Jan 2025, 03:18 PM",Writing,Start,
+"24 Jan 2025, 03:39 PM",Writing,Stop,20m 56s
+"24 Jan 2025, 03:39 PM",Coding,Start,
+"24 Jan 2025, 04:37 PM",Coding,Stop,58m 30s
+"24 Jan 2025, 04:37 PM",Comms,Start,
+"24 Jan 2025, 04:37 PM",Comms,Stop,2s
+"24 Jan 2025, 05:03 PM",Comms,Start,
+"24 Jan 2025, 05:46 PM",Comms,Stop,42m 56s
+"24 Jan 2025, 05:53 PM",Coding,Start,
+"24 Jan 2025, 06:21 PM",Coding,Stop,27m 45s
+"24 Jan 2025, 06:25 PM",Learning,Start,
+"24 Jan 2025, 07:01 PM",Learning,Stop,35m 37s
+"24 Jan 2025, 07:46 PM",Coding,Start,
+"24 Jan 2025, 07:55 PM",Coding,Stop,8m 33s
+"25 Jan 2025, 12:02 PM",All Activities,Reset Day,
+"25 Jan 2025, 12:04 PM",Writing,Start,N/A
