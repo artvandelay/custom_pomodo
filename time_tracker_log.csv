@@ -108,3 +108,20 @@ Timestamp,Activity,Event,Elapsed Time
 "26 Jan 2025, 11:31 PM",Coding,Stop,1h 0m 45s
 "26 Jan 2025, 01:38 AM",Coding,Start,
 "26 Jan 2025, 05:42 AM",Coding,Stop,4h 3m 45s
+"26 Jan 2025, 02:08 PM",All Activities,Reset Day,
+"26 Jan 2025, 02:08 PM",Writing,Start,
+"26 Jan 2025, 03:19 PM",Writing,Stop,1h 10m 40s
+"26 Jan 2025, 03:54 PM",Writing,Start,
+"26 Jan 2025, 04:03 PM",Writing,Stop,9m 7s
+"26 Jan 2025, 04:54 PM",Writing,Start,
+"26 Jan 2025, 05:16 PM",Writing,Stop,22m 8s
+"26 Jan 2025, 07:48 PM",Coding,Start,
+"26 Jan 2025, 07:59 PM",Coding,Stop,10m 49s
+"27 Jan 2025, 02:43 AM",Writing,Start,
+"27 Jan 2025, 04:18 AM",Writing,Stop,1h 34m 56s
+"27 Jan 2025, 01:55 PM",All Activities,Reset Day,
+"27 Jan 2025, 01:20 PM",Comms,Start,
+"27 Jan 2025, 01:55 PM",Comms,Stop,35m 56s
+"27 Jan 2025, 01:55 PM",Coding,Start,
+"27 Jan 2025, 02:32 PM",Coding,Stop,37m 2s
+"27 Jan 2025, 03:01 PM",Comms,Start,N/A
